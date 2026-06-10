@@ -14,12 +14,14 @@ import os
 // Prism bundle is missing, or when tokenization fails. In all cases, it returns
 // a single plain token containing the entire code string.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct CodeToken: Hashable, Sendable {
   let content: String
   let type: StructuredText.HighlighterTheme.TokenType
 }
 
 #if canImport(JavaScriptCore)
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   actor CodeTokenizer {
     private let context: JSContext
     private let logger = Logger(category: .codeTokenizer)
@@ -69,6 +71,7 @@ struct CodeToken: Hashable, Sendable {
     }
   }
 #else
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   actor CodeTokenizer {
     private let logger = Logger(category: .codeTokenizer)
 
@@ -85,6 +88,7 @@ struct CodeToken: Hashable, Sendable {
   }
 #endif
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension Logger.Textual.Category {
   fileprivate static let codeTokenizer = Self(rawValue: "codeTokenizer")
 }

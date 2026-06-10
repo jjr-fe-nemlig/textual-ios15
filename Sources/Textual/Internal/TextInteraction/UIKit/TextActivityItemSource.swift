@@ -2,6 +2,7 @@
   import UIKit
   import LinkPresentation
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   final class TextActivityItemSource: NSObject, UIActivityItemSource {
     let transferableText: TransferableText
 

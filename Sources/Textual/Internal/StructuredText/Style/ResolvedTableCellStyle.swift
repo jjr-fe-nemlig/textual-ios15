@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   // NB: Enables environment resolution in `TableCellStyle`
   struct ResolvedTableCellStyle<S: TableCellStyle>: View {
@@ -17,6 +18,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.TableCellStyle {
   @MainActor func resolve(configuration: Configuration) -> some View {
     StructuredText.ResolvedTableCellStyle(self, configuration: configuration)

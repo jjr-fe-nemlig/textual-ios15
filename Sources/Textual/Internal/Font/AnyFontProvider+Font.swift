@@ -17,10 +17,12 @@ import SwiftUI
 // won't be recognized. When reflection encounters an unknown provider type, provider() returns nil
 // and font scaling gracefully falls back to the original unscaled font.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension Font {
   fileprivate typealias ProviderCache = NSCache<KeyBox<Font>, Box<AnyFontProvider>>
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension Font.ProviderCache {
   fileprivate static var `default`: Self {
     let cache = Self()
@@ -29,6 +31,7 @@ extension Font.ProviderCache {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension Font {
   private static let providerCache = LockIsolated(ProviderCache.default)
 
@@ -49,6 +52,7 @@ extension Font {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AnyFontProvider {
   init?(font: Font) {
     let mirror = Mirror(reflecting: font)

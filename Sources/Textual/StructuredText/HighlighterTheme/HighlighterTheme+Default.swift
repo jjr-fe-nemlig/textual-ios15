@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.HighlighterTheme {
   /// The default syntax-highlighting theme used by Textual.
   public static let `default` = Self(
@@ -60,6 +61,7 @@ extension StructuredText.HighlighterTheme {
   )
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension DynamicColor {
   fileprivate static let codeKeyword = DynamicColor(
     light: Color(red: 0.607592, green: 0.137526, blue: 0.576284),

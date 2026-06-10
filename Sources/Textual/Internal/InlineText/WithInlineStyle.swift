@@ -15,6 +15,7 @@ import SwiftUI
 //
 // Styling is recomputed whenever the input, style, or environment snapshot changes.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct WithInlineStyle<Content: View>: View {
   @Environment(\.inlineStyle) private var style
   @Environment(\.textEnvironment) private var environment

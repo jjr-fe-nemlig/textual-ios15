@@ -5,7 +5,7 @@ import SwiftUI
 /// Textual uses attachment loaders to turn URLs (for example image links or custom emoji URLs)
 /// into concrete ``Attachment`` values.
 ///
-/// The default loaders fetch and decode images using Textual's built-in image loader. You can
+/// The default loaders fetch and decode images using Textual’s built-in image loader. You can
 /// supply custom loaders using ``TextualNamespace/imageAttachmentLoader(_:)`` and
 /// ``TextualNamespace/emojiAttachmentLoader(_:)``.
 ///
@@ -40,6 +40,7 @@ import SwiftUI
 /// .textual.imageAttachmentLoader(.image(named: \.lastPathComponent))
 /// .textual.emojiAttachmentLoader(.emoji(named: \.lastPathComponent))
 /// ```
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public protocol AttachmentLoader: Sendable {
   associatedtype Attachment: Textual.Attachment
 
@@ -56,6 +57,7 @@ public protocol AttachmentLoader: Sendable {
   ) async throws -> Attachment
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension EnvironmentValues {
   @Entry var imageAttachmentLoader: any AttachmentLoader = .image()
   @Entry var emojiAttachmentLoader: any AttachmentLoader = .emoji()

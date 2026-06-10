@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// Applies an italic font trait.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct ItalicProperty: TextProperty {
   /// Creates an italic property.
   public init() {}
@@ -11,6 +12,7 @@ public struct ItalicProperty: TextProperty {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextProperty where Self == ItalicProperty {
   /// Applies an italic font trait.
   public static var italic: Self { .init() }

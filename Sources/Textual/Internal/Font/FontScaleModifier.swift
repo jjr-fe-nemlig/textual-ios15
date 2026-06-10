@@ -7,6 +7,7 @@ import SwiftUI
 //
 // If reflection fails (unknown provider type), the original unscaled font is returned.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct FontScaleModifier: ViewModifier {
   @Environment(\.textEnvironment) private var environment
 

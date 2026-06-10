@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// A thematic break style inspired by GitHub’s rendering.
   public struct GitHubThematicBreakStyle: ThematicBreakStyle {
@@ -15,6 +16,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.ThematicBreakStyle where Self == StructuredText.GitHubThematicBreakStyle {
   /// A GitHub-like thematic break style.
   public static var gitHub: Self {
@@ -22,6 +24,7 @@ extension StructuredText.ThematicBreakStyle where Self == StructuredText.GitHubT
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 #Preview {
   StructuredText(
     markdown: """

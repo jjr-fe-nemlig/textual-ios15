@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// A theme used to style syntax-highlighted code blocks.
   ///
@@ -31,6 +32,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension EnvironmentValues {
   @usableFromInline
   @Entry var highlighterTheme: StructuredText.HighlighterTheme = .default

@@ -6,6 +6,7 @@ import SwiftUI
 // measures itself and reports its width via preferences. The maximum width is taken and applied
 // to all markers, ensuring alignment even when marker widths vary (e.g., "1." vs "10.").
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   struct OrderedList: View {
     @Environment(\.listItemSpacing) private var listItemSpacing
@@ -44,6 +45,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   fileprivate struct OrderedListItem: View {
     @Environment(\.listItemStyle) private var listItemStyle

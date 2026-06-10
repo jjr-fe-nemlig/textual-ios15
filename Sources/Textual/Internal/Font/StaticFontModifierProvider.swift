@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct StaticFontModifierProvider<Base: FontProvider, Modifier: StaticFontModifier> {
   var base: Base
 
@@ -8,6 +9,7 @@ struct StaticFontModifierProvider<Base: FontProvider, Modifier: StaticFontModifi
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StaticFontModifierProvider: FontProvider {
   var scale: CGFloat {
     get { base.scale }

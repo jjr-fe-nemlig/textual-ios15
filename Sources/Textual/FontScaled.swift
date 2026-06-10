@@ -21,6 +21,7 @@ import SwiftUI
 /// StructuredText(markdown: "Hello, world!")
 ///   .textual.paragraphStyle(CompactParagraphStyle())
 /// ```
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct FontScaled<Value> where Value: FontScalable {
   /// The unscaled value.
   public let value: Value
@@ -42,18 +43,24 @@ public struct FontScaled<Value> where Value: FontScalable {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled: Sendable where Value: Sendable {}
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled: Equatable where Value: Equatable {}
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled: Hashable where Value: Hashable {}
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled: Decodable where Value: Decodable {}
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled: Encodable where Value: Encodable {}
 
 // MARK: - BinaryFloatingPoint
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled where Value: BinaryFloatingPoint {
   /// Wraps a numeric value as a font-scaled value.
   public static func fontScaled(_ value: Value) -> Self {
@@ -62,11 +69,13 @@ extension FontScaled where Value: BinaryFloatingPoint {
 }
 
 /// A type that can scale itself proportionally to a font size.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public protocol FontScalable {
   /// Returns the value scaled by the given font size.
   func scaled(by fontSize: CGFloat) -> Self
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScalable where Self: BinaryFloatingPoint {
   /// Scales the value by multiplying it by `fontSize`.
   public func scaled(by fontSize: CGFloat) -> Self {
@@ -74,11 +83,14 @@ extension FontScalable where Self: BinaryFloatingPoint {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension CGFloat: FontScalable {}
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension Double: FontScalable {}
 
 // MARK: - EdgeInsets
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension EdgeInsets: FontScalable {
   public func scaled(by fontSize: CGFloat) -> EdgeInsets {
     EdgeInsets(
@@ -90,6 +102,7 @@ extension EdgeInsets: FontScalable {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled where Value == EdgeInsets {
   /// Creates font-scaled insets.
   public static func fontScaled(
@@ -111,6 +124,7 @@ extension FontScaled where Value == EdgeInsets {
 
 // MARK: - ProposedViewSize
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension ProposedViewSize: FontScalable {
   public func scaled(by fontSize: CGFloat) -> ProposedViewSize {
     ProposedViewSize(
@@ -122,6 +136,7 @@ extension ProposedViewSize: FontScalable {
 
 // MARK: - CGSize
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension CGSize: FontScalable {
   public func scaled(by fontSize: CGFloat) -> CGSize {
     CGSize(
@@ -131,6 +146,7 @@ extension CGSize: FontScalable {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontScaled where Value == CGSize {
   /// Creates a font-scaled size.
   public static func fontScaled(width: CGFloat, height: CGFloat) -> Self {

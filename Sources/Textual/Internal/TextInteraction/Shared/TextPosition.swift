@@ -10,6 +10,7 @@
   // the edge between two run slices. That extra bit of information makes range comparisons and
   // containment behave consistently when the same visual location can map to two adjacent indices.
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   struct TextPosition: Hashable, Comparable, CustomStringConvertible {
     enum Affinity: Comparable {
       case downstream  // leading edge in the current layout direction

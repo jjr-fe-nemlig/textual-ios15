@@ -4,6 +4,7 @@ import SwiftUI
 ///
 /// Textual passes `TextEnvironmentValues` to APIs that need to resolve styling or sizing based on
 /// the current environment, such as ``TextProperty`` and ``Attachment``.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct TextEnvironmentValues: Hashable, Sendable {
   /// The current font in the environment.
   public var font: Font?
@@ -16,9 +17,6 @@ public struct TextEnvironmentValues: Hashable, Sendable {
 
   /// Properties that control how Textual renders emoji.
   public var emojiProperties: EmojiProperties
-
-  /// Properties that control how Textual renders math expressions.
-  public var mathProperties: MathProperties
 
   /// The current color scheme in the environment.
   public var colorScheme: ColorScheme
@@ -39,7 +37,6 @@ public struct TextEnvironmentValues: Hashable, Sendable {
     dynamicTypeSize: DynamicTypeSize = .large,
     legibilityWeight: LegibilityWeight? = nil,
     emojiProperties: EmojiProperties = .init(),
-    mathProperties: MathProperties = .init(),
     colorScheme: ColorScheme = .light,
     colorSchemeContrast: ColorSchemeContrast = .standard
   ) {
@@ -47,12 +44,12 @@ public struct TextEnvironmentValues: Hashable, Sendable {
     self.dynamicTypeSize = dynamicTypeSize
     self.legibilityWeight = legibilityWeight
     self.emojiProperties = emojiProperties
-    self.mathProperties = mathProperties
     self.colorScheme = colorScheme
     self.colorSchemeContrast = colorSchemeContrast
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension EnvironmentValues {
   var textEnvironment: TextEnvironmentValues {
     .init(
@@ -60,7 +57,6 @@ extension EnvironmentValues {
       dynamicTypeSize: dynamicTypeSize,
       legibilityWeight: legibilityWeight,
       emojiProperties: emojiProperties,
-      mathProperties: mathProperties,
       colorScheme: colorScheme,
       colorSchemeContrast: colorSchemeContrast
     )

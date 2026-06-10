@@ -61,15 +61,6 @@ import SwiftUI
 /// )
 /// ```
 ///
-/// Math expressions are supported when you include `.math` in `syntaxExtensions`:
-///
-/// ```swift
-/// InlineText(
-///   markdown: "The area is $A = \\pi r^2$.",
-///   syntaxExtensions: [.math]
-/// )
-/// ```
-///
 /// ### Links
 ///
 /// Links use SwiftUI's `openURL` environment action. To customize link handling, override it:
@@ -94,6 +85,7 @@ import SwiftUI
 /// InlineText(markdown: "Use `git status` to check **uncommitted** changes")
 ///   .textual.inlineStyle(style)
 /// ```
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct InlineText: View {
   @State private var attributedString = AttributedString()
 
@@ -124,6 +116,7 @@ public struct InlineText: View {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension InlineText {
   /// Creates inline text from a markdown string.
   ///
@@ -153,6 +146,7 @@ extension InlineText {
 
 // MARK: - Previews
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview("Custom Emoji") {

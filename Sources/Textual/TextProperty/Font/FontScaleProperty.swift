@@ -1,6 +1,7 @@
 import Foundation
 
 /// Scales the current font by the given factor.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct FontScaleProperty: TextProperty {
   private let scale: CGFloat
 
@@ -27,6 +28,7 @@ public struct FontScaleProperty: TextProperty {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextProperty where Self == FontScaleProperty {
   /// Scales the font by the given factor.
   public static func fontScale(_ scale: CGFloat) -> Self {

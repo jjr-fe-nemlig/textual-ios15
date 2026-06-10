@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// The default code block style used by ``StructuredText/DefaultStyle``.
   public struct DefaultCodeBlockStyle: CodeBlockStyle {
@@ -27,6 +28,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.CodeBlockStyle where Self == StructuredText.DefaultCodeBlockStyle {
   /// The default code block style.
   public static var `default`: Self {
@@ -34,6 +36,7 @@ extension StructuredText.CodeBlockStyle where Self == StructuredText.DefaultCode
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview {

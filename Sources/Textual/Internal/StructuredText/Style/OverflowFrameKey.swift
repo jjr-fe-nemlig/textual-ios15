@@ -8,6 +8,7 @@ import SwiftUI
 // Text selection uses these frames to exclude scrollable regions from hit-testing so embedded
 // ScrollViews can receive touch events while the parent selection interaction ignores them.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct OverflowFrameKey: PreferenceKey {
   static let defaultValue: [CGRect] = []
 

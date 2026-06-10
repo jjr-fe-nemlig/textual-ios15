@@ -4,6 +4,7 @@ import Foundation
 ///
 /// A `TextProperty` mutates an `AttributeContainer` for a portion of styled text. Textual applies
 /// properties to the text spans it styles, and uses them to build higher-level styles like ``InlineStyle``.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public protocol TextProperty: Sendable, Hashable {
   /// Applies this property to an attribute container.
   ///
@@ -26,6 +27,7 @@ public protocol TextProperty: Sendable, Hashable {
 ///   .fontWeight(.semibold)
 /// )
 /// ```
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct AnyTextProperty: TextProperty {
   let base: any TextProperty
 

@@ -11,6 +11,7 @@ import Foundation
 //
 // Syntax extensions are opt-in; when no extensions are provided, the input is returned unchanged.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedStringMarkdownParser {
   struct PatternProcessor {
     private let syntaxExtensions: [SyntaxExtension]
@@ -58,6 +59,7 @@ extension AttributedStringMarkdownParser {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension Array where Element == AttributedStringMarkdownParser.SyntaxExtension {
   func firstMatching(_ tokenType: PatternTokenizer.TokenType) -> Element? {
     guard tokenType != .text else {
@@ -69,6 +71,7 @@ extension Array where Element == AttributedStringMarkdownParser.SyntaxExtension 
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedString.Runs.Run {
   fileprivate var isPreformatted: Bool {
     if self.inlinePresentationIntent?.isPreformatted ?? false {
@@ -83,18 +86,21 @@ extension AttributedString.Runs.Run {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension InlinePresentationIntent {
   fileprivate var isPreformatted: Bool {
     contains(.code) || contains(.inlineHTML) || contains(.blockHTML)
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension PresentationIntent {
   fileprivate var isPreformatted: Bool {
     components.first?.kind.isPreformatted ?? false
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension PresentationIntent.Kind {
   fileprivate var isPreformatted: Bool {
     switch self {

@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 protocol FontProvider: Sendable, Hashable {
   // NB: This multiplicative factor supports arbitrary font scaling on platforms
   //     without `Font.scaled(by:)`. Where available, we reflect `Font.scaled(by:)`

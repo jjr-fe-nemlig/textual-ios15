@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// Applies a lowercase small caps font variant.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct LowercaseSmallCapsProperty: TextProperty {
   /// Creates a lowercase small caps property.
   public init() {}
@@ -11,6 +12,7 @@ public struct LowercaseSmallCapsProperty: TextProperty {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextProperty where Self == LowercaseSmallCapsProperty {
   /// Applies a lowercase small caps font variant.
   public static var lowercaseSmallCaps: Self { .init() }

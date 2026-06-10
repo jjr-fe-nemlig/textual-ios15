@@ -11,6 +11,7 @@
   // and UIKit. `IndexPathSequence` builds an inclusive/exclusive traversal over run slices based
   // on the start/end affinities of a `TextRange`.
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension IndexPath {
     var layout: Int {
       self[0]
@@ -45,6 +46,7 @@
     }
   }
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   struct IndexPathSequence: Sequence, IteratorProtocol {
     private var current: IndexPath?
     private let end: IndexPath?

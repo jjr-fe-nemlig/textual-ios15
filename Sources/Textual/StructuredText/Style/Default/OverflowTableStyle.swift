@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// A table style that enables horizontal scrolling with a relative max width ratio.
   ///
@@ -42,6 +43,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.TableStyle where Self == StructuredText.OverflowTableStyle {
   /// A table style that enables horizontal scrolling with a relative max width.
   public static var overflow: Self {
@@ -56,6 +58,7 @@ extension StructuredText.TableStyle where Self == StructuredText.OverflowTableSt
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview {

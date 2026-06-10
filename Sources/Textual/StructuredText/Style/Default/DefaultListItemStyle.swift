@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// The default list item style used by ``StructuredText/DefaultStyle``.
   public struct DefaultListItemStyle: ListItemStyle {
@@ -23,6 +24,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.ListItemStyle where Self == StructuredText.DefaultListItemStyle {
   /// The default list item style.
   public static var `default`: Self {
@@ -37,6 +39,7 @@ extension StructuredText.ListItemStyle where Self == StructuredText.DefaultListI
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview("OrderedList") {
@@ -66,6 +69,7 @@ extension StructuredText.ListItemStyle where Self == StructuredText.DefaultListI
   .textual.textSelection(.enabled)
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview("UnorderedList") {

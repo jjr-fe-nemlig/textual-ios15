@@ -1,6 +1,7 @@
 #if TEXTUAL_ENABLE_TEXT_SELECTION
   import SwiftUI
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension TextLayoutCollection {
     var stringLength: Int {
       layouts.map(\.attributedString.length).reduce(0, +)
@@ -38,6 +39,7 @@
     }
   }
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension TextLayout {
     @available(macOS 10.0, *)
     @available(iOS, unavailable)
@@ -57,6 +59,7 @@
     }
   }
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension NSAttributedString {
     @available(macOS 10.0, *)
     @available(iOS, unavailable)

@@ -6,6 +6,7 @@ import SwiftUI
 ///
 /// You can’t create `ResourceAttachmentLoader` directly. Use
 /// ``AttachmentLoader/image(named:in:)`` and ``AttachmentLoader/emoji(named:in:)`` instead.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct ResourceAttachmentLoader<Content: Attachment>: AttachmentLoader {
   private let name: @Sendable (URL) -> String
   private let bundle: Bundle?
@@ -30,6 +31,7 @@ public struct ResourceAttachmentLoader<Content: Attachment>: AttachmentLoader {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttachmentLoader where Self == ResourceAttachmentLoader<ImageResourceAttachment> {
   /// Resolves image URLs into named images from a bundle.
   ///
@@ -52,6 +54,7 @@ extension AttachmentLoader where Self == ResourceAttachmentLoader<ImageResourceA
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttachmentLoader where Self == ResourceAttachmentLoader<EmojiResourceAttachment> {
   /// Resolves custom emoji URLs into named images from a bundle.
   ///

@@ -7,6 +7,7 @@ import Foundation
 ///
 /// This parser can process its output to expand custom emoji and math expressions into
 /// inline attachments.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct AttributedStringMarkdownParser: MarkupParser {
   private let baseURL: URL?
   private let options: AttributedString.MarkdownParsingOptions
@@ -34,6 +35,7 @@ public struct AttributedStringMarkdownParser: MarkupParser {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension MarkupParser where Self == AttributedStringMarkdownParser {
   /// Creates a Markdown parser configured for inline-only syntax.
   public static func inlineMarkdown(

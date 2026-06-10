@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// The default set of styles for structured text.
   ///
@@ -21,6 +22,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.Style where Self == StructuredText.DefaultStyle {
   /// The default structured text style.
   public static var `default`: Self {

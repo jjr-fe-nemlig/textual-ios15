@@ -8,13 +8,18 @@ import SwiftUI
 // settings as the SwiftUI environment.
 
 #if canImport(AppKit) && !targetEnvironment(macCatalyst)
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   typealias PlatformFont = NSFont
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   typealias FontDescriptor = NSFontDescriptor
 #elseif canImport(UIKit)
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   typealias PlatformFont = UIFont
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   typealias FontDescriptor = UIFontDescriptor
 #endif
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension FontDescriptor {
   static func preferredFontDescriptor(
     withTextStyle style: Font.TextStyle,
@@ -38,6 +43,7 @@ extension FontDescriptor {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension PlatformFont.TextStyle {
   init(_ textStyle: Font.TextStyle) {
     switch textStyle {
@@ -80,6 +86,7 @@ extension PlatformFont.TextStyle {
 }
 
 #if canImport(UIKit)
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension PlatformFont {
     static func custom(
       _ name: String,

@@ -7,6 +7,7 @@ import SwiftUI
 ///
 /// You can’t create `URLAttachmentLoader` directly. Use ``AttachmentLoader/image(relativeTo:)``
 /// and ``AttachmentLoader/emoji(relativeTo:)`` instead.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct URLAttachmentLoader<Content: Attachment>: AttachmentLoader {
   private let baseURL: URL?
   private let content: @Sendable (Image, String) -> Content
@@ -28,6 +29,7 @@ public struct URLAttachmentLoader<Content: Attachment>: AttachmentLoader {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttachmentLoader where Self == URLAttachmentLoader<ImageAttachment> {
   /// Loads images referenced by URLs.
   ///
@@ -37,6 +39,7 @@ extension AttachmentLoader where Self == URLAttachmentLoader<ImageAttachment> {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttachmentLoader where Self == URLAttachmentLoader<EmojiAttachment> {
   /// Loads custom emoji referenced by URL.
   ///

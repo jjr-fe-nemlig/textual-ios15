@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension View {
   /// Provides access to Textual-specific modifiers.
   ///
@@ -14,6 +15,7 @@ extension View {
   @inlinable public var textual: TextualNamespace<Self> { .init(self) }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextualNamespace where Base: View {
   /// Sets the spacing above and below the current block.
   @MainActor public func blockSpacing(_ blockSpacing: StructuredText.BlockSpacing) -> some View {
@@ -125,11 +127,6 @@ extension TextualNamespace where Base: View {
   /// Sets the custom emoji properties.
   public func emojiProperties(_ emojiProperties: EmojiProperties) -> some View {
     base.environment(\.emojiProperties, emojiProperties)
-  }
-
-  /// Sets the math rendering properties.
-  public func mathProperties(_ mathProperties: MathProperties) -> some View {
-    base.environment(\.mathProperties, mathProperties)
   }
 
   /// Scales the font used within the view by a constant factor.

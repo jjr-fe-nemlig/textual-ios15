@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// The properties of a table passed to a `TableStyle`.
   public struct TableStyleConfiguration {
@@ -33,6 +34,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension EnvironmentValues {
   @usableFromInline
   @Entry var tableStyle: any StructuredText.TableStyle = .default

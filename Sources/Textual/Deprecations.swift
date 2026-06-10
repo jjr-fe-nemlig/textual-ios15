@@ -2,6 +2,7 @@ import SwiftUI
 
 // MARK: - Deprecated after 0.2.1
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   @available(*, deprecated, message: "Use 'init(markdown:baseURL:syntaxExtensions:)' instead.")
   @_disfavoredOverload
@@ -20,6 +21,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension InlineText {
   @available(*, deprecated, message: "Use 'init(markdown:baseURL:syntaxExtensions:)' instead.")
   @_disfavoredOverload
@@ -38,15 +40,14 @@ extension InlineText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedStringMarkdownParser {
   @available(*, deprecated, message: "Use 'SyntaxExtension' instead.")
   public struct PatternOptions: Hashable, Sendable {
     public var emoji: Set<Emoji>
-    public var mathExpressions: Bool
 
-    public init(emoji: Set<Emoji> = [], mathExpressions: Bool = false) {
+    public init(emoji: Set<Emoji> = []) {
       self.emoji = emoji
-      self.mathExpressions = mathExpressions
     }
   }
 
@@ -61,13 +62,13 @@ extension AttributedStringMarkdownParser {
       baseURL: baseURL,
       options: options,
       syntaxExtensions: [
-        patternOptions.emoji.isEmpty ? nil : .emoji(patternOptions.emoji),
-        patternOptions.mathExpressions ? .math : nil,
+        patternOptions.emoji.isEmpty ? nil : .emoji(patternOptions.emoji)
       ].compactMap(\.self)
     )
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension MarkupParser where Self == AttributedStringMarkdownParser {
   @available(*, deprecated, message: "Use 'inlineMarkdown(baseURL:syntaxExtensions:)' instead.")
   @_disfavoredOverload
@@ -97,6 +98,7 @@ extension MarkupParser where Self == AttributedStringMarkdownParser {
 
 // MARK: - Deprecated after 0.2.0
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.TableStyleConfiguration {
   @available(
     *, deprecated, message: "Use 'makeBackground(layout:)' or 'makeOverlay(layout:)' instead."
@@ -108,16 +110,19 @@ extension StructuredText.TableStyleConfiguration {
 
 // MARK: - Deprecated after 0.1.1
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension EmojiProperties {
   @available(*, deprecated, message: "Use 'EmojiProperties()' instead.")
   public static let `default` = EmojiProperties()
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttachmentSelectionStyle {
   @available(*, deprecated, renamed: "text")
   public static let inline: AttachmentSelectionStyle = .text
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension InlineText {
   @available(*, deprecated, renamed: "init(markdown:baseURL:patternOptions:)")
   @_disfavoredOverload
@@ -134,6 +139,7 @@ extension InlineText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   @available(*, deprecated, renamed: "init(markdown:baseURL:patternOptions:)")
   @_disfavoredOverload
@@ -150,6 +156,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedStringMarkdownParser {
   @available(*, deprecated, renamed: "PatternOptions")
   public typealias PreprocessingOptions = PatternOptions
@@ -165,6 +172,7 @@ extension AttributedStringMarkdownParser {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension MarkupParser where Self == AttributedStringMarkdownParser {
   @available(*, deprecated, renamed: "inlineMarkdown(baseURL:patternOptions:)")
   @_disfavoredOverload

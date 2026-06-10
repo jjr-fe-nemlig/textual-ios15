@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// A block quote style inspired by GitHub’s rendering.
   public struct GitHubBlockQuoteStyle: BlockQuoteStyle {
@@ -20,6 +21,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.BlockQuoteStyle where Self == StructuredText.GitHubBlockQuoteStyle {
   /// A GitHub-like block quote style.
   public static var gitHub: Self {
@@ -27,6 +29,7 @@ extension StructuredText.BlockQuoteStyle where Self == StructuredText.GitHubBloc
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 #Preview {
   StructuredText(
     markdown: """
