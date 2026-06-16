@@ -1,6 +1,7 @@
 import Foundation
 import UniformTypeIdentifiers
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 final class TransferableText: NSObject {
   let attributedString: NSAttributedString
 
@@ -13,6 +14,7 @@ final class TransferableText: NSObject {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TransferableText: NSItemProviderWriting {
   static var writableTypeIdentifiersForItemProvider: [String] {
     [UTType.plainText.identifier, UTType.html.identifier]

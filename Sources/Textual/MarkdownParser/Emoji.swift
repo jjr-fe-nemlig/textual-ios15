@@ -5,6 +5,7 @@ import Foundation
 /// You can pass a set of `Emoji` values by adding
 /// ``AttributedStringMarkdownParser/SyntaxExtension/emoji(_:)`` to
 /// `syntaxExtensions` to expand `:shortcode:` sequences into inline attachments.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct Emoji: Hashable, Sendable, Codable {
   /// The shortcode used in the markup, without surrounding `:` characters.
   public let shortcode: String

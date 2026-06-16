@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// Applies a strikethrough style attribute.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct StrikethroughStyleProperty: TextProperty {
   private let style: Text.LineStyle
 
@@ -17,6 +18,7 @@ public struct StrikethroughStyleProperty: TextProperty {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextProperty where Self == StrikethroughStyleProperty {
   /// Strikes through text using the given line style.
   public static func strikethroughStyle(_ style: Text.LineStyle) -> Self {

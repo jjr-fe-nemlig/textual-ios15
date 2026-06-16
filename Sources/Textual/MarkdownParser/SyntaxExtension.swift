@@ -1,5 +1,6 @@
 import Foundation
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedStringMarkdownParser {
   /// A syntax extension that replaces matched tokens after Markdown parsing.
   public struct SyntaxExtension {
@@ -12,6 +13,7 @@ extension AttributedStringMarkdownParser {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedStringMarkdownParser.SyntaxExtension {
   /// Replaces `:shortcode:` sequences using the provided custom emoji definitions.
   public static func emoji(_ emoji: Set<Emoji>) -> Self {
@@ -34,21 +36,6 @@ extension AttributedStringMarkdownParser.SyntaxExtension {
         shortcode,
         attributes: attributes.emojiURL(emoji.url)
       )
-    }
-  }
-
-  /// Replaces inline and block math expressions with attachments.
-  public static var math: Self {
-    .init(patterns: [.mathBlock, .mathInline]) { token, attributes in
-      guard let latex = token.capturedContent else {
-        return nil
-      }
-
-      let attachment = MathAttachment(
-        latex: latex,
-        style: token.type == .mathBlock ? .block : .inline
-      )
-      return AttributedString("\u{FFFC}", attributes: attributes.attachment(.init(attachment)))
     }
   }
 }

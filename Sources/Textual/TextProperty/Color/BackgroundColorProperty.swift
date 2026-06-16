@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// Sets a background color attribute.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct BackgroundColorProperty: TextProperty {
   private let color: DynamicColor
 
@@ -17,6 +18,7 @@ public struct BackgroundColorProperty: TextProperty {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextProperty where Self == BackgroundColorProperty {
   /// Sets the background color using a dynamic color.
   public static func backgroundColor(_ color: DynamicColor) -> Self {

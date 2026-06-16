@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct AnyFontProvider {
   var base: any FontProvider
 
@@ -12,6 +13,7 @@ struct AnyFontProvider {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AnyFontProvider: FontProvider {
   var scale: CGFloat {
     get { base.scale }

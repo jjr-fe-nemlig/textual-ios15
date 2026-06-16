@@ -1,5 +1,6 @@
 import Foundation
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.HighlighterTheme {
   /// An identifier for a syntax token.
   ///
@@ -21,6 +22,7 @@ extension StructuredText.HighlighterTheme {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.HighlighterTheme.TokenType {
   // General purpose
   public static let plain: Self = "plain"

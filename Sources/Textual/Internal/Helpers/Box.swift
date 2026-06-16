@@ -1,5 +1,6 @@
 import Foundation
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 final class Box<Value> {
   var wrappedValue: Value
 
@@ -8,6 +9,7 @@ final class Box<Value> {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct WeakBox<Wrapped: AnyObject> {
   weak var wrapped: Wrapped?
 
@@ -16,6 +18,7 @@ struct WeakBox<Wrapped: AnyObject> {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 final class KeyBox<Value: Hashable>: NSObject {
   var wrappedValue: Value
 

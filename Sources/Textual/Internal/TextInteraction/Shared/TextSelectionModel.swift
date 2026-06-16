@@ -11,6 +11,7 @@
   // changes, the model attempts to reconcile the current selection into the new layout so the
   // selection stays stable across updates.
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   @Observable
   final class TextSelectionModel {
     var selectedRange: TextRange? {
@@ -85,6 +86,7 @@
     }
   }
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension TextSelectionModel {
     var hasText: Bool {
       layoutCollection.stringLength > 0

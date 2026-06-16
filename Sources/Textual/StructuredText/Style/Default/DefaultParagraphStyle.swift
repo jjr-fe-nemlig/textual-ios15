@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// The default paragraph style used by ``StructuredText/DefaultStyle``.
   public struct DefaultParagraphStyle: ParagraphStyle {
@@ -14,6 +15,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.ParagraphStyle where Self == StructuredText.DefaultParagraphStyle {
   /// The default paragraph style.
   public static var `default`: Self {
@@ -21,6 +23,7 @@ extension StructuredText.ParagraphStyle where Self == StructuredText.DefaultPara
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview {

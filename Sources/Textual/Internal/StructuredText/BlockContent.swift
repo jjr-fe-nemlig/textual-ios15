@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   struct BlockContent<Content: AttributedStringProtocol>: View {
     private let parent: PresentationIntent.IntentType?
@@ -23,6 +24,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   struct Block: View {
     private let intent: PresentationIntent.IntentType?
@@ -35,8 +37,6 @@ extension StructuredText {
 
     var body: some View {
       switch intent?.kind {
-      case .paragraph where content.isMathBlock:
-        MathBlock(content)
       case .paragraph:
         Paragraph(content)
       case .header(let level):
@@ -45,8 +45,6 @@ extension StructuredText {
         OrderedList(intent: intent, content: content)
       case .unorderedList:
         UnorderedList(intent: intent, content: content)
-      case .codeBlock(let languageHint) where languageHint?.lowercased() == "math":
-        MathCodeBlock(content)
       case .codeBlock(let languageHint):
         CodeBlock(content, languageHint: languageHint)
       case .blockQuote:

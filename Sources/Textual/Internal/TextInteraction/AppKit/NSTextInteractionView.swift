@@ -10,6 +10,7 @@
   // so embedded scrollable regions continue to receive input events. Link taps are forwarded to
   // `openURL`.
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   final class NSTextInteractionView: NSView {
     var model: TextSelectionModel
     var exclusionRects: [CGRect]
@@ -290,6 +291,7 @@
     }
   }
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension NSTextInteractionView: NSUserInterfaceValidations {
     func validateUserInterfaceItem(_ item: any NSValidatedUserInterfaceItem) -> Bool {
       switch item.action {

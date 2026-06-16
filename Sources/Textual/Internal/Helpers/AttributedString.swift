@@ -1,21 +1,7 @@
 import Foundation
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedStringProtocol {
-  var isMathBlock: Bool {
-    let attachments = self.attachments()
-
-    guard
-      attachments.count == 1,
-      let attachment = attachments.first?.base as? MathAttachment,
-      case .block = attachment.displayStyle
-    else {
-      return false
-    }
-
-    return String(self.characters[...])
-      .trimmingCharacters(in: .whitespacesAndNewlines) == "\u{FFFC}"
-  }
-
   func attachments() -> Set<AnyAttachment> {
     uniqueValues(for: \.textual.attachment)
   }
@@ -60,12 +46,14 @@ extension AttributedStringProtocol {
 // over structural blocks (paragraphs, list items, table cells) without reconstructing the
 // entire block tree.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedStringProtocol {
   func blockRuns(parent: PresentationIntent.IntentType? = nil) -> AttributedString.BlockRuns {
     AttributedString.BlockRuns(attributedString: self, parent: parent)
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension AttributedString {
   struct BlockRuns: RandomAccessCollection {
     struct BlockRun: Sendable {
@@ -132,6 +120,7 @@ extension AttributedString {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension PresentationIntent {
   fileprivate func intent(
     before intent: PresentationIntent.IntentType?
@@ -153,8 +142,10 @@ extension PresentationIntent {
 
 // MARK: - NSAttributedString
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension NSAttributedString.Key: TextualCompatible {}
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextualNamespace where Base == NSAttributedString.Key {
   static var attachment: Base {
     .init(AttributeScopes.TextualAttributes.AttachmentAttribute.name)

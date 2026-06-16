@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// A thematic break style that renders a `Divider`.
   public struct DividerThematicBreakStyle: ThematicBreakStyle {
@@ -15,6 +16,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.ThematicBreakStyle where Self == StructuredText.DividerThematicBreakStyle {
   /// A thematic break style that uses a `Divider`.
   public static var divider: Self {
@@ -22,6 +24,7 @@ extension StructuredText.ThematicBreakStyle where Self == StructuredText.Divider
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview {

@@ -9,6 +9,7 @@
   // That’s what allows ranges like “caret at the end of a slice” to either include or exclude the
   // slice, depending on whether the caret is considered to be on the leading or trailing edge.
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   struct TextRange: Hashable, CustomStringConvertible {
     let start: TextPosition
     let end: TextPosition

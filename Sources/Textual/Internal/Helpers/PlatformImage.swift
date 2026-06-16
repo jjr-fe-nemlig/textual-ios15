@@ -1,11 +1,14 @@
 import SwiftUI
 
 #if canImport(UIKit)
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   typealias PlatformImage = UIImage
 #elseif canImport(AppKit)
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   typealias PlatformImage = NSImage
 #endif
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension PlatformImage {
   static func resolve(
     _ name: String,
@@ -38,6 +41,7 @@ extension PlatformImage {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension SwiftUI.Image {
   init(_ platformImage: PlatformImage) {
     #if canImport(UIKit)
@@ -49,6 +53,7 @@ extension SwiftUI.Image {
 }
 
 #if canImport(AppKit) && !targetEnvironment(macCatalyst)
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   extension NSAppearance {
     convenience init?(environment: ColorEnvironmentValues) {
       switch (environment.colorScheme, environment.colorSchemeContrast) {

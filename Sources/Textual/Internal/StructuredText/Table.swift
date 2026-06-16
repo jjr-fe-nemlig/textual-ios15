@@ -7,6 +7,7 @@ import SwiftUI
 // to geometry coordinates, and builds a `TableLayout` that the style uses to render overlays
 // (such as grid lines) and backgrounds with precise cell positions.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   struct Table: View {
     @Environment(\.tableStyle) private var tableStyle

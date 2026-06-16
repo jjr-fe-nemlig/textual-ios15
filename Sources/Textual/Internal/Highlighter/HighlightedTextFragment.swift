@@ -9,6 +9,7 @@ import SwiftUI
 // The presentationIntent is preserved after highlighting so pasteboard formatters can
 // reconstruct the block structure when copying code.
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 struct HighlightedTextFragment: View {
   @Environment(\.textEnvironment) private var textEnvironment
 
@@ -48,6 +49,7 @@ struct HighlightedTextFragment: View {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension HighlightedTextFragment {
   @MainActor @Observable final class Model {
     var tokens: [CodeToken] = []

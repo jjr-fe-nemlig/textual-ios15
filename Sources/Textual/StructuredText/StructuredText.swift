@@ -101,6 +101,7 @@ import SwiftUI
 ///
 /// When you need to parse something other than Markdown, use ``init(_:parser:)`` with a custom
 /// ``MarkupParser`` implementation.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct StructuredText: View {
   @State private var attributedString = AttributedString()
 
@@ -134,6 +135,7 @@ public struct StructuredText: View {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// Creates a structured-text view from a Markdown string.
   ///
@@ -144,15 +146,6 @@ extension StructuredText {
   ///   - markdown: The Markdown source to render.
   ///   - baseURL: A base URL used to resolve relative links and image URLs.
   ///   - syntaxExtensions: Custom syntax extensions applied after markdown parsing.
-  ///
-  /// Math expressions are supported when you include `.math` in `syntaxExtensions`:
-  ///
-  /// ```swift
-  /// StructuredText(
-  ///   markdown: "The area is $A = \\pi r^2$.",
-  ///   syntaxExtensions: [.math]
-  /// )
-  /// ```
   public init(
     markdown: String,
     baseURL: URL? = nil,
@@ -168,6 +161,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
 #Preview(traits: .fixedLayout(width: 400, height: 600)) {
@@ -209,6 +203,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 #Preview("Custom Emoji") {
   let emoji: Set<Emoji> = [
     Emoji(shortcode: "dog", url: URL(string: "https://picsum.photos/id/237/32/32")!),

@@ -10,8 +10,10 @@
   // `NSView` that handles selection gestures and context menus. The modifier also manages cursor updates,
   // switching between I-beam and pointing hand based on hover position over text or links.
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   typealias PlatformTextSelectionInteraction = AppKitTextSelectionInteraction
 
+  @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
   struct AppKitTextSelectionInteraction: ViewModifier {
     @State private var cursorPushed = false
 

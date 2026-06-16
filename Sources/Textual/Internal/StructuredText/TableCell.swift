@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   struct TableCell: View {
     @Environment(\.tableCellStyle) private var tableCellStyle
@@ -41,6 +42,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.TableCell {
   struct Identifier: Hashable {
     let row: Int
@@ -59,6 +61,7 @@ extension StructuredText.TableCell {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.TableCell {
   struct Spacing: Sendable, Hashable {
     let horizontal: CGFloat?

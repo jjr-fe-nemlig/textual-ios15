@@ -28,6 +28,7 @@ import Foundation
 /// For structured content, make sure your output carries the appropriate presentation intents.
 /// Textual groups content into blocks by walking `PresentationIntent` changes across runs, so
 /// missing or inconsistent intents will typically show up as incorrect block rendering.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @MainActor
 public protocol MarkupParser {
   /// Returns attributed content for the given input string.

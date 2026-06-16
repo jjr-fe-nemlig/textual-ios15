@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   // NB: Enables environment resolution in `BlockQuoteStyle`
   struct ResolvedBlockQuoteStyle<S: BlockQuoteStyle>: View {
@@ -17,6 +18,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.BlockQuoteStyle {
   @MainActor func resolve(configuration: Configuration) -> some View {
     StructuredText.ResolvedBlockQuoteStyle(self, configuration: configuration)

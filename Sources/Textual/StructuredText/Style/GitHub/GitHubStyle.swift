@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText {
   /// A GitHub-like set of styles for structured text.
   ///
@@ -22,6 +23,7 @@ extension StructuredText {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension StructuredText.Style where Self == StructuredText.GitHubStyle {
   /// A GitHub-like structured text style.
   public static var gitHub: Self {

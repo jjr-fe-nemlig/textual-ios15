@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// Sets a foreground (text) color attribute.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct ForegroundColorProperty: TextProperty {
   private let color: DynamicColor
 
@@ -17,6 +18,7 @@ public struct ForegroundColorProperty: TextProperty {
   }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextProperty where Self == ForegroundColorProperty {
   /// Sets the foreground color using a dynamic color.
   public static func foregroundColor(_ color: DynamicColor) -> Self {

@@ -17,20 +17,24 @@ import Foundation
 ///
 /// SwiftUI views get the namespace through the ``SwiftUICore/View/textual`` property.
 /// Other types can opt into it by conforming to ``TextualCompatible``.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 @frozen
 public struct TextualNamespace<Base> {
   @usableFromInline let base: Base
   @inlinable public init(_ base: Base) { self.base = base }
 }
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextualNamespace: Sendable where Base: Sendable {}
 
 /// A type that opts into the `.textual` namespace.
 ///
 /// Types that conform to `TextualCompatible` gain `textual` helpers on both the instance and the
 /// type.
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public protocol TextualCompatible {}
 
+@available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 extension TextualCompatible {
   /// The `TextualNamespace` type for this conforming type.
   @inlinable public static var textual: TextualNamespace<Self>.Type {
