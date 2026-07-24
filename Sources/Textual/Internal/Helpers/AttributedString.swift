@@ -72,8 +72,11 @@ extension AttributedString {
       let intent: PresentationIntent.IntentType?
       let range: Range<AttributedString.Index>
     }
-
-    private struct Boundary: Equatable {
+    // Intentionally NOT Equatable: synthesizing `==` references
+    // AttributedString.Runs.Index.==, which recent SDKs back-date to iOS 15 but which only
+    // ships in the iOS 17 runtime. That strong reference crashes host apps at launch on
+    // iOS 16 (dyld: "Symbol not found"). Boundary equality is unused here anyway.
+    private struct Boundary {
       let index: AttributedString.Runs.Index
       let intent: PresentationIntent.IntentType?
     }
