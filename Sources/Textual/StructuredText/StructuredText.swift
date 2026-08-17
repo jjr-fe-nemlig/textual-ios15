@@ -103,7 +103,7 @@ import SwiftUI
 /// ``MarkupParser`` implementation.
 @available(iOS 18, macOS 15, tvOS 18, watchOS 11, visionOS 2, *)
 public struct StructuredText: View {
-  @State private var attributedString = AttributedString()
+  @State private var attributedString: AttributedString
 
   private let markup: String
   private let parser: any MarkupParser
@@ -114,6 +114,17 @@ public struct StructuredText: View {
   public init(_ markup: String, parser: any MarkupParser) {
     self.markup = markup
     self.parser = parser
+    // Parse eagerly so the first layout pass already has the whole document.
+    //
+    // Deferring the parse to `.onChange(of: markup, initial: true)` leaves the first rendered
+    // generation empty, which measures 0pt. Under ordinary SwiftUI hosting that is invisible:
+    // the state update lands and the view is laid out again. Inside a self-sizing
+    // `UICollectionView` cell (`UIHostingConfiguration`) it is fatal — the cell is measured
+    // during that empty first pass, the layout caches 0pt, and nothing re-measures it until the
+    // cell is recycled, so the content stays invisible until the user scrolls.
+    self._attributedString = State(
+      initialValue: (try? parser.attributedString(for: markup)) ?? .init()
+    )
   }
 
   public var body: some View {
@@ -123,7 +134,7 @@ public struct StructuredText: View {
         .modifier(TextSelectionCoordination())
     }
     .coordinateSpace(.textContainer)
-    .onChange(of: markup, initial: true) {
+    .onChange(of: markup) {
       markupDidChange(markup)
     }
     // Disable line limit to avoid per-fragment truncation
