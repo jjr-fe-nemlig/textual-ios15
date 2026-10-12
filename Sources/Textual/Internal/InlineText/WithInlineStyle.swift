@@ -34,21 +34,31 @@ struct WithInlineStyle<Content: View>: View {
   }
 
   var body: some View {
-    content(output ?? AttributedString())
+    // Resolve synchronously until the cached `output` lands.
+    //
+    // `.onChange(of:initial:)` does not deliver before the first layout pass, so falling back to an
+    // empty `AttributedString` would make that pass measure as if the span held no text at all.
+    // Under ordinary SwiftUI hosting that is invisible, but inside a self-sizing
+    // `UIHostingConfiguration` cell it is fatal, for the same reason spelled out in
+    // ``StructuredText/init(_:parser:)``. The state cannot be seeded in `init` the way
+    // `StructuredText` seeds its parse, because `style` and `environment` are read from the
+    // environment, which is unavailable there — so the nil case recomputes instead of rendering
+    // empty, and `onChange` keeps populating the state as the cheap path for later passes.
+    content(output ?? resolved(input, style: style, in: environment))
       .onChange(of: Tuple(input, style, environment), initial: true) { _, newValue in
-        resolve(
-          attributedString: newValue.values.0,
+        output = resolved(
+          newValue.values.0,
           style: newValue.values.1,
           in: newValue.values.2
         )
       }
   }
 
-  private func resolve(
-    attributedString: AttributedString,
+  private func resolved(
+    _ attributedString: AttributedString,
     style: InlineStyle,
     in environment: TextEnvironmentValues
-  ) {
+  ) -> AttributedString {
     var output = attributedString
 
     for run in attributedString.runs {
@@ -79,6 +89,6 @@ struct WithInlineStyle<Content: View>: View {
       output[run.range].mergeAttributes(attributes, mergePolicy: .keepNew)
     }
 
-    self.output = output
+    return output
   }
 }
