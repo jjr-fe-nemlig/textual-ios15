@@ -52,7 +52,15 @@ struct TextFragment<Content: AttributedStringProtocol>: View {
   }
 
   private var text: Text {
-    textBuilder?.text ?? Text(verbatim: "")
+    // Build synchronously until the cached `textBuilder` lands.
+    //
+    // `.onChange(of:initial:)` does not deliver before the first layout pass, so rendering an empty
+    // `Text` would make that pass measure as if the fragment held no text at all — fatal inside a
+    // self-sizing `UIHostingConfiguration` cell, for the reason spelled out in
+    // ``StructuredText/init(_:parser:)``. The builder stays in `@State` because `onGeometryChange`
+    // resizes attachments through it; rebuilding it on every body pass would throw that sizing
+    // away. So only the pass before the state lands builds one on demand.
+    textBuilder?.text ?? TextBuilder(content, environment: textEnvironment).text
   }
 }
 
